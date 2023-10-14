@@ -21,7 +21,9 @@ export default function RootLayout({
         <Providers>
             <html lang="en">
                 <body className={inter.className}>
-                    <Navbar />
+                    <section className="bg-slate-950">
+                        <Navbar />
+                    </section>
                     {children}
                 </body>
             </html>

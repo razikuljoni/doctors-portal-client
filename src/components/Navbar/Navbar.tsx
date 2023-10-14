@@ -1,34 +1,67 @@
 "use client";
 
-import { Layout } from "antd";
+import {
+    ShoppingCartOutlined,
+    SmileOutlined,
+    UserOutlined,
+} from "@ant-design/icons";
+import { Avatar, Badge, Dropdown, Layout, MenuProps, Row } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 
 const { Header } = Layout;
 
 const Navbar: React.FC = () => {
-    //     const items: MenuProps["items"] = [
-    //         {
-    //             key: "1",
-    //             label: <Link href="/">Home</Link>,
-    //             icon: <SmileOutlined />,
-    //         },
-    //         {
-    //             key: "2",
-    //             label: <Link href="/dashboard">Dashboard</Link>,
-    //             icon: <SmileOutlined />,
-    //         },
-    //         {
-    //             key: "3",
-    //             label: <Link href="/about-us">About Us</Link>,
-    //             icon: <SmileOutlined />,
-    //         },
-    //         {
-    //             key: "4",
-    //             label: <Link href="/contact-us">Contact Us</Link>,
-    //             icon: <SmileOutlined />,
-    //         },
-    //     ];
+    // const items: MenuProps["items"] = [
+    //     {
+    //         key: "1",
+    //         label: (
+    //             <div className="px-4 py-3 ">
+    //                 <span className="block text-sm  dark:text-gray-900 text-white">
+    //                     Bonnie Green
+    //                 </span>
+    //                 <span className="block text-sm  text-gray-500 truncate dark:text-gray-400">
+    //                     name@flowbite.com
+    //                 </span>
+    //             </div>
+    //         ),
+    //         icon: <SmileOutlined />,
+    //     },
+    //     {
+    //         key: "2",
+    //         label: <Link href="#">Profile</Link>,
+    //         icon: <SmileOutlined />,
+    //     },
+    //     {
+    //         key: "4",
+    //         label: <Link href="#">Sign out</Link>,
+    //         icon: <SmileOutlined />,
+    //         danger: true,
+    //     },
+    // ];
+
+    const items: MenuProps["items"] = [
+        {
+            key: "1",
+            label: <Link href="/">Home</Link>,
+            icon: <SmileOutlined />,
+        },
+        {
+            key: "3",
+            label: <Link href="/about-us">About Us</Link>,
+            icon: <SmileOutlined />,
+        },
+        {
+            key: "4",
+            label: <Link href="/contact-us">Contact Us</Link>,
+            icon: <SmileOutlined />,
+        },
+        {
+            key: "2",
+            label: <Link href="/dashboard">Dashboard</Link>,
+            icon: <SmileOutlined />,
+        },
+    ];
 
     //     return (
     //         <Layout className="layout">
@@ -68,7 +101,7 @@ const Navbar: React.FC = () => {
     // };
 
     return (
-        <nav className="bg-white border-gray-200 dark:bg-gray-900">
+        <nav className=" border-gray-200 bg-slate-950">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <Link href="/" className="flex items-center">
                     <Image
@@ -76,95 +109,63 @@ const Navbar: React.FC = () => {
                         className="h-8 mr-3"
                         width={50}
                         height={50}
-                        alt="Flowbite Logo"
+                        alt="Doctors Portal Logo"
                     />
                     <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
                         Doctors Portal
                     </span>
                 </Link>
                 <div className="flex items-center md:order-2">
-                    <button
-                        type="button"
-                        className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-                        id="user-menu-button"
-                        aria-expanded="false"
-                        data-dropdown-toggle="user-dropdown"
-                        data-dropdown-placement="bottom"
-                    >
-                        <span className="sr-only">Open user menu</span>
-                        <Image
-                            className="w-8 h-8 rounded-full"
-                            src="/assets/login.png"
-                            width={50}
-                            height={50}
-                            alt="user photo"
-                        />
-                    </button>
                     {/* <!-- Dropdown menu --> */}
-                    <div
-                        className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
-                        id="user-dropdown"
-                    >
-                        <div className="px-4 py-3">
-                            <span className="block text-sm text-gray-900 dark:text-white">
-                                Bonnie Green
-                            </span>
-                            <span className="block text-sm  text-gray-500 truncate dark:text-gray-400">
-                                name@flowbite.com
-                            </span>
-                        </div>
-                        <ul className="py-2" aria-labelledby="user-menu-button">
-                            <li>
-                                <Link
-                                    href="#"
-                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                                >
-                                    Dashboard
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="#"
-                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                                >
-                                    Profile
-                                </Link>
-                            </li>
-
-                            <li>
-                                <Link
-                                    href="#"
-                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                                >
-                                    Sign out
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-                    <button
-                        data-collapse-toggle="navbar-user"
-                        type="button"
-                        className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                        aria-controls="navbar-user"
-                        aria-expanded="false"
-                    >
-                        <span className="sr-only">Open main menu</span>
-                        <svg
-                            className="w-5 h-5"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 17 14"
-                        >
-                            <path
-                                stroke="currentColor"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M1 1h15M1 7h15M1 13h15"
+                    <Row justify="end" align="middle" className="w-full">
+                        <Dropdown menu={{ items }} className="mr-4">
+                            <Badge count={2}>
+                                <ShoppingCartOutlined
+                                    className="text-white"
+                                    style={{ fontSize: "30px" }}
+                                />
+                            </Badge>
+                        </Dropdown>
+                        <Dropdown menu={{ items }} className="mr-4">
+                            <Avatar
+                                className="ring-2 ring-white"
+                                style={{
+                                    backgroundColor: "#87d068",
+                                    cursor: "pointer",
+                                }}
+                                icon={<UserOutlined />}
                             />
-                        </svg>
-                    </button>
+                        </Dropdown>
+                        <Dropdown
+                            className="text-white  border-spacing-2 border-2 border-white"
+                            menu={{ items }}
+                        >
+                            <button
+                                data-collapse-toggle="navbar-user"
+                                type="button"
+                                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                                aria-controls="navbar-user"
+                                aria-expanded="false"
+                            >
+                                <span className="sr-only">Open main menu</span>
+                                <svg
+                                    className="w-5 h-5"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 17 14"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M1 1h15M1 7h15M1 13h15"
+                                    />
+                                </svg>
+                            </button>
+                        </Dropdown>
+                    </Row>
                 </div>
                 <div
                     className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"

@@ -1,8 +1,11 @@
+import HeroSection from "@/components/HeroSection/HeroSection";
+
 export default function Home() {
     return (
         <main>
-            <h1>This is a fullstack assignment</h1>
-            <h4>this is test</h4>
+            <section className="bg-slate-900 shadow-lg shadow-white" >
+                <HeroSection />
+            </section>
         </main>
     );
 }
