@@ -19,11 +19,11 @@ export default function RootLayout({
 }) {
     return (
         <Providers>
-            <html lang="en">
+            <html lang="en" className="max-w-[1920px] mx-auto">
                 <body className={inter.className}>
-                    <section className="bg-slate-950">
+                    <nav className="bg-slate-950">
                         <Navbar />
-                    </section>
+                    </nav>
                     {children}
                 </body>
             </html>

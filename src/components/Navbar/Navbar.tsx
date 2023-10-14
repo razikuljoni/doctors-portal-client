@@ -101,7 +101,7 @@ const Navbar: React.FC = () => {
     // };
 
     return (
-        <nav className=" border-gray-200 bg-slate-950">
+        <nav className=" border-gray-200 shadow-xl shadow-slate-700">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <Link href="/" className="flex items-center">
                     <Image
