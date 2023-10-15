@@ -1,3 +1,4 @@
+import ContactUs from "@/components/ContactUs/ContactUs";
 import Footer from "@/components/Footer/Footer";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import Testimonials from "@/components/Testimonials/Testimonials";
@@ -10,6 +11,9 @@ export default function Home() {
             </section>
             <section className="">
                 <Testimonials />
+            </section>
+            <section className="">
+                <ContactUs />
             </section>
             <section className="">
                 <Footer />
