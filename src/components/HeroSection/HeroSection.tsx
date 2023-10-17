@@ -64,13 +64,6 @@ const HeroSection = () => {
                     </h3>
                 </div>
             </Carousel>
-            <div className="flex justify-center">
-                <input
-                    className="w-8/12 mx-auto h-10 rounded-full border-none text-xl"
-                    type="text"
-                    placeholder="Search..."
-                />
-            </div>
         </>
     );
 };

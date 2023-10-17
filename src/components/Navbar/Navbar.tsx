@@ -1,6 +1,7 @@
 "use client";
 
 import {
+    BellOutlined,
     ShoppingCartOutlined,
     SmileOutlined,
     UserOutlined,
@@ -121,6 +122,14 @@ const Navbar: React.FC = () => {
                         <Dropdown menu={{ items }} className="mr-4">
                             <Badge count={2}>
                                 <ShoppingCartOutlined
+                                    className="text-white"
+                                    style={{ fontSize: "30px" }}
+                                />
+                            </Badge>
+                        </Dropdown>
+                        <Dropdown menu={{ items }} className="mr-4">
+                            <Badge count={1}>
+                                <BellOutlined
                                     className="text-white"
                                     style={{ fontSize: "30px" }}
                                 />
